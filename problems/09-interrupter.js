@@ -16,7 +16,14 @@ console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 
 ***********************************************************************/
 
-// Your code here
+const interrupter = (interruptingWord) => {
+  return (string) => {
+    let words = string.split(" ");
+    //words.splice(1, 0, interruptingWord);
+    //words.splice(3, 0, interruptingWord);
+    return words.join(" " +interruptingWord + " ");
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
