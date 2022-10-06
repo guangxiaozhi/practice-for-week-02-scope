@@ -13,7 +13,31 @@ function returned by recVolume should continue to return the original volume.
 
 ***********************************************************************/
 
-// Your code here
+const recVolume = (height) => {
+    let rec = [height];
+    return (num) => {
+       let recV = 1;
+       rec.push(num);
+       if (rec.length < 3 ) {
+       // console.log(recV)
+         return () => {}
+       }
+       else if (rec.length === 3) {
+         for(const el of rec) {
+           recV *= el;
+         }
+         rec.push(recV)
+         return recV;
+       } else {
+        return rec[3];
+       }
+     }
+}
+
+let table1 = recVolume(5);
+console.log(table1(4));
+console.log(table1(3));
+console.log(table1(3));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
