@@ -18,6 +18,14 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 ***********************************************************************/
 
 // Your code here
+const sandwichMaker = () => {
+  let sandWich = "One sandwich with tomato"
+  function sandWichOrder(string){
+    sandWich = sandWich + " " + "and " + string;
+    return sandWich;
+  }
+  return sandWichOrder;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
