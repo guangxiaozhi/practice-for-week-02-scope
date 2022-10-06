@@ -15,7 +15,17 @@ console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]
 
 ***********************************************************************/
 
-// Your code here
+const coupon = (discount) => {
+  return (prices) => {
+    for(let i=0; i<prices.length; i++) {
+      let price = prices[i];
+      let discounted = price * discount;
+      let discountedPrice = price - discounted;
+      prices.splice(i,1, discountedPrice);
+    }
+    return prices;
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

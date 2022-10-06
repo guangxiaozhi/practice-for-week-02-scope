@@ -22,7 +22,23 @@ console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
 
-// Your code here
+const smoothieMachine = (cb, ...toppings) => {
+  let sentence = "I'm having a smoothie with"
+  return (...something) => {
+    if(something.length > 1) {
+      for(let i=0; i<something.length; i++) {
+        sentence = `${sentence} and ${something[i]}`
+      }
+    } else {
+      sentence = `${sentence} ${something[0]}`;
+    }
+    for(let i=0; i<toppings.length; i++) {
+      sentence = `${sentence} and ${toppings[i]}`;
+    }
+    return sentence;
+  }
+}
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
