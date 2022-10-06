@@ -28,7 +28,23 @@ Example 4:
 
 ***********************************************************************/
 
-// Your code here
+// const countDownTimer = (n) => {
+//   if (n > 0 ) {
+//     return () => {
+//       n--;
+//       if( n > 0) {
+//         return () => {
+
+//         }
+//       } else {
+//         return "Happy New Year!";
+//       }
+//     }
+//   } else {
+//     return "Happy New Year!";
+//   }
+// }
+
 const countDownTimer = (n) => {
   if (n === 0) {
     return "Happy New Year!";
@@ -48,6 +64,7 @@ const countDownTimer = (n) => {
   }
 
 }
+
 
 console.log(countDownTimer(0)); // prints "Happy New Year!"
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
