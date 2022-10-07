@@ -15,15 +15,25 @@ console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]
 
 ***********************************************************************/
 
-const coupon = (discount) => {
-  return (prices) => {
-    for(let i=0; i<prices.length; i++) {
-      let price = prices[i];
-      let discounted = price * discount;
-      let discountedPrice = price - discounted;
-      prices.splice(i,1, discountedPrice);
+// const coupon = (discount) => {
+//   return (prices) => {
+//     for(let i=0; i<prices.length; i++) {
+//       let price = prices[i];
+//       let discounted = price * discount;
+//       let discountedPrice = price - discounted;
+//       prices.splice(i,1, discountedPrice);
+//     }
+//     return prices;
+//   }
+// }
+
+const coupon = discount => {
+  return prices => {
+    let result = [];
+    for (let price of prices) {
+      result.push(price * (1 - discount));
     }
-    return prices;
+    return result;
   }
 }
 
