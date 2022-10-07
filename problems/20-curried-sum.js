@@ -42,25 +42,61 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - Come up with at least two situations (one per person) on when currying would
   be useful
 ***********************************************************************/
-const curriedSum = (numArgs) => {
+const curriedSum = numArgs => {
+  if (numArgs <= 0) {
+    return null;
+  }
   let numbers = [];
-  let sum = 0;
-  const _curriedSum = (num) => {
-    if(num <= 0) {
+  let _curriedSum =  (integerNum) => {
+    if (integerNum <= 0) {
       return null;
     }
-    numbers.push(num);
-    if(numbers.length < numArgs) {
-      return _curriedSum;
-    } else {
-      for (const el of numbers) {
-        sum += el;
+    numbers.push(integerNum);
+    if (numbers.length === numArgs) {
+      let sum = 0;
+      for (let item of numbers) {
+        sum += item;
       }
       return sum;
+    }else {
+      return _curriedSum;
     }
   }
   return _curriedSum;
 }
+
+//Example:
+// 1
+const ans = curriedSum(4); // returns a function
+ans(5) // returns a function
+ans(20) // returns a function
+ans(30) // returns a function
+ans(20); // => returns 75
+
+// 2
+// this function can also be invoked like this:
+const ans2 = curriedSum(3)(2)(1)(7); // => returns 10
+
+
+// const curriedSum = (numArgs) => {
+//   let numbers = [];
+//   let sum = 0;
+//   const _curriedSum = (num) => {
+//     if(num <= 0) {
+//       return null;
+//     }
+//     numbers.push(num);
+//     if(numbers.length < numArgs) {
+//       return _curriedSum;
+//     } else {
+//       for (const el of numbers) {
+//         sum += el;
+//       }
+//       return sum;
+//     }
+//   }
+//   return _curriedSum;
+// }
 
 const sum = curriedSum(4); // returns a function
 sum(5) // returns a function
