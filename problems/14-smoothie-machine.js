@@ -38,6 +38,22 @@ const smoothieMachine = (cb, ...toppings) => {
     return sentence;
   }
 }
+// const smoothieMachine = (cb, ...topping) => {
+//   let str = "I'm having a smoothie with"
+//   let length = str.length;
+//   return (...addThing) => {
+//     let param = [...topping, ...addThing]
+//     for (let item of param) {
+//       if(str.length === length) {
+//         str = str + " " + item;
+//       }else {
+//         str = str + " and " +item;
+//        }
+
+//     }
+//     return str;
+//   }
+// }
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
