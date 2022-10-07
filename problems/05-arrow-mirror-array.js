@@ -12,14 +12,14 @@ arrowMirrorArray(['a', 'b', 'c', 'd']); // => [ 'a', 'b', 'c', 'd', 'd', 'c', 'b
 
 const arrowMirrorArray = (array) => {
   let mirrored = array;
-  mirrored.push(3);
-  console.log(mirrored);
-  let mirror = array.reverse();
-  for(let i=0; i<mirror.length; i++ ) {
-    mirrored.push(mirror[i]);
+  //let mirrored = [...array];
+  //let mirror = array.reverse();
+  for (let i = mirrored.length - 1; i >= 0; i--) {
+    mirrored.push(mirrored[i]);
+    console.log(mirrored.length);
   }
   return mirrored;
-}
+};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

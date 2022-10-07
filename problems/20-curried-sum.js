@@ -42,9 +42,31 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - Come up with at least two situations (one per person) on when currying would
   be useful
 ***********************************************************************/
+const curriedSum = (numArgs) => {
+  let numbers = [];
+  let sum = 0;
+  const _curriedSum = (num) => {
+    if(num <= 0) {
+      return null;
+    }
+    numbers.push(num);
+    if(numbers.length < numArgs) {
+      return _curriedSum;
+    } else {
+      for (const el of numbers) {
+        sum += el;
+      }
+      return sum;
+    }
+  }
+  return _curriedSum;
+}
 
-// Your code here
-
+const sum = curriedSum(4); // returns a function
+sum(5) // returns a function
+sum(20) // returns a function
+console.log(sum(30))// returns a function
+console.log(sum(20)); // => returns 75
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {

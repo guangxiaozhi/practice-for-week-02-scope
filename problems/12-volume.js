@@ -20,13 +20,14 @@ const recVolume = (height) => {
        rec.push(num);
        if (rec.length < 3 ) {
        // console.log(recV)
-         return () => {}
+        return () => {}
        }
        else if (rec.length === 3) {
          for(const el of rec) {
            recV *= el;
          }
          rec.push(recV)
+         console.log(rec)
          return recV;
        } else {
         return rec[3];
@@ -35,8 +36,8 @@ const recVolume = (height) => {
 }
 
 let table1 = recVolume(5);
-console.log(table1(4));
-console.log(table1(3));
+table1(4);
+table1(3);
 console.log(table1(3));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
